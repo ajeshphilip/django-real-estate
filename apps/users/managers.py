@@ -30,13 +30,13 @@ class CustomUserManager(BaseUserManager):
         user = self.model(username=username, first_name=first_name, last_name=last_name, email=email, **extra_fields)
 
         user.set_password(password)
-        extra_fields.setdefault("is_statf", False)
+        extra_fields.setdefault("is_staff", False)
         extra_fields.setdefault("is_superuser", False)
         user.save(using=self._db)
         return user
 
     def create_superuser(self, username, first_name, last_name, email, password, **extra_fields):
-        extra_fields.setdefault("is_statf", True)
+        extra_fields.setdefault("is_staff", True)
         extra_fields.setdefault("is_superuser", True)
         extra_fields.setdefault("is_active", True)
 

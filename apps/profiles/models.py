@@ -28,12 +28,12 @@ class Profile(TimeStampedUUIDModel):
         max_length=20,
     )
     
-    country = CountryField(verbose_name=_("Country"), default="KE", blank=False, null=False)
+    country = CountryField(verbose_name=_("Country"), default="IN", blank=False, null=False)
 
     city = models.CharField(
         verbose_name=_("City"),
         max_length=180,
-        default="Nairobi",
+        default="Hyderabad",
         blank=False,
         null=False,
     )
